@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :searches,only:[:search]
   end
 
-  namespace :admin do
+  namespace :admins do
     resources :books,only:[:index,:destroy]
     resources :users,only:[:index,:show,:edit]
   end

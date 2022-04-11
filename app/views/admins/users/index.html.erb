@@ -20,7 +20,7 @@
           <tr>
             <td><%= user.id %></td>
             <td>
-              <%= link_to admin_users_path(customer.id) do %>
+              <%= link_to admins_users_path(customer.id) do %>
                 <%= user.family_name %><%= user.first_name %>
               <% end %>
             </td>
@@ -37,7 +37,6 @@
       </tbody>
     </table>
     <div class="">
-      <%= paginate @users %>
     </div>
   </div>
 </div>
