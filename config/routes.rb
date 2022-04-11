@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :admins
+  devise_for :admin
   devise_for :users
 
   scope module: :public do
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :searches,only:[:search]
   end
 
-  namespace :admins do
+  namespace :admin do
     resources :books,only:[:index,:destroy]
     resources :users,only:[:index,:show,:edit]
   end
