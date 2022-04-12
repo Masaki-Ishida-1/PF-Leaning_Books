@@ -1,2 +1,32 @@
-<h1>Public::Books#new</h1>
-<p>Find me in app/views/public/books/new.html.erb</p>
+<h1 class="text-center m-5 border-bottom p-1">書籍登録</h1>
+<%= form_with model: @book,url:books_path, local: true do |f| %>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+      </div>
+      <div class="col-6">
+        <%= f.file_field :image, accept: "image/*" %>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-4">
+        <%= f.text_field :name, autocomplete: "name", class:"form-control",placeholder: 'タイトル' %>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-9">
+        <%= f.text_area :introduction,:size => "30x5", class: "form-control",placeholder: '紹介文' %>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col">
+        <p>評価</p>
+      </div>
+    </div>
+    <div="row mt-5">
+      <div class="col text-center">
+        <%= f.submit ' 新規登録 ', class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -40,6 +40,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.string :first_name_kana
       t.string :image
       t.boolean :is_deleted
+      t.integer :favorite_id
 
       t.timestamps null: false
     end

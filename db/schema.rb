@@ -56,13 +56,19 @@ ActiveRecord::Schema.define(version: 2022_04_10_105702) do
     t.string "name"
     t.string "image"
     t.text "introduction"
+    t.integer "favorite_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "favorites", force: :cascade do |t|
+    t.integer "book_id_id"
+    t.integer "user_id_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id_id"], name: "index_favorites_on_book_id_id"
+    t.index ["user_id_id"], name: "index_favorites_on_user_id_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -72,6 +78,13 @@ ActiveRecord::Schema.define(version: 2022_04_10_105702) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "name"
+    t.string "family_name"
+    t.string "first_name"
+    t.string "family_name_kana"
+    t.string "first_name_kana"
+    t.string "image"
+    t.boolean "is_deleted"
+    t.integer "favorite_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
