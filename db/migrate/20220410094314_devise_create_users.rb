@@ -39,6 +39,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.string :family_name_kana
       t.string :first_name_kana
       t.string :image
+      t.string :introduction
       t.boolean :is_deleted
       t.integer :favorite_id
 
