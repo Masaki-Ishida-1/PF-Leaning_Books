@@ -8,7 +8,7 @@
       <h2>書籍一覧</h2>
     </div>
     <div class="col-6 text-center">
-      <!--検索機能-->
+      <%= render "public/searches/search-btn" %>
     </div>
   </div>
   <div class="row">
@@ -16,9 +16,10 @@
       <div class="col-3">
         <%= link_to book_path(book) do %>
           <p><%= book.name %></p>
-          <p><%= image_tag book.get_book_image(200,200) %></p>
+          <p><%= image_tag book.get_book_image(100,100) %></p>
         <% end %>
         <p>投稿者:<%= book.user.name %></p>
+        <div><%= render "public/favorites/favorite", book: book %></div>
       </div>
     <% end %>
   </div>

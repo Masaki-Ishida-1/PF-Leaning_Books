@@ -1,6 +1,7 @@
 class Book < ApplicationRecord
   has_one_attached :book_image
   belongs_to :user
+  has_many :favorites, dependent: :destroy
 
   def get_book_image(width, height)
     unless book_image.attached?
@@ -8,5 +9,9 @@ class Book < ApplicationRecord
       book_image.attach(io: File.open(file_path), filename: 'default-image.jpg',content_type:'image/jpeg')
     end
     book_image.variant(resize_to_fill:[width, height])
+  end
+
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
   end
 end

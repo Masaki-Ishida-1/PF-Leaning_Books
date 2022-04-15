@@ -1,4 +1,6 @@
 class Public::BooksController < ApplicationController
+  before_action :set_q, only: [:index, :search]
+
   def new
     @book = Book.new
   end
@@ -36,9 +38,18 @@ class Public::BooksController < ApplicationController
   def destroy
   end
 
+  def search
+    @results = @q.result.includes(:user)
+  end
+
+
   private
 
   def book_params
     params.require(:book).permit(:name,:image,:introduction)
+  end
+
+  def set_q
+    @q = Book.ransack(params[:q])
   end
 end

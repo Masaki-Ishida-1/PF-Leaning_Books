@@ -7,9 +7,12 @@ Rails.application.routes.draw do
     get 'about'=>"homes#about"
     patch 'users/withdraw/:id', to:'users#withdraw', as:"users/withdraw"
     resources :users,only:[:show,:edit,:update]
-    resources :books,only:[:new,:index,:show,:edit,:update,:create,:destroy]
-    resources :favorites,only:[:index,:create,:destroy]
-    resources :searches,only:[:search]
+    resources :books,only:[:new,:index,:show,:edit,:update,:create,:destroy] do
+      resource :favorites,only:[:create,:destroy]
+      collection do
+        get 'search'
+      end
+    end
   end
 
   namespace :admins do

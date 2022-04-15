@@ -63,12 +63,10 @@ ActiveRecord::Schema.define(version: 2022_04_10_105702) do
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer "book_id_id"
-    t.integer "user_id_id"
+    t.integer "book_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["book_id_id"], name: "index_favorites_on_book_id_id"
-    t.index ["user_id_id"], name: "index_favorites_on_user_id_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -83,6 +81,7 @@ ActiveRecord::Schema.define(version: 2022_04_10_105702) do
     t.string "family_name_kana"
     t.string "first_name_kana"
     t.string "image"
+    t.string "introduction"
     t.boolean "is_deleted"
     t.integer "favorite_id"
     t.datetime "created_at", precision: 6, null: false
