@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
   <head>
     <title>LearningBooks</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="h-100">
     <%= render 'layouts/header' %>
-    <%= yield %>
+    <div class="row h-100">
+      <%= render 'layouts/sidebar' %>
+      <div class="col-8">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

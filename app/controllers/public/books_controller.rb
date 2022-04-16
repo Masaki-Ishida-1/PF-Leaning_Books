@@ -7,6 +7,7 @@ class Public::BooksController < ApplicationController
 
   def index
     @books = Book.all
+    @ranks = Book.find(Favorite.group(:book_id).order('count(book_id) DESC').limit(4).pluck(:book_id))
   end
 
   def show
