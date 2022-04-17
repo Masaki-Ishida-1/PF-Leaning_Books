@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -13,8 +12,12 @@
   <body class="h-100">
     <%= render 'layouts/header' %>
     <div class="row h-100">
+    <% if user_signed_in? %>
+    <div class ="col-2">
       <%= render 'layouts/sidebar' %>
-      <div class="col-8">
+    </div>
+    <% end %>
+      <div class="col-10">
         <%= yield %>
       </div>
     </div>

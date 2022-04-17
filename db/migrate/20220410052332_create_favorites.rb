@@ -3,6 +3,7 @@ class CreateFavorites < ActiveRecord::Migration[6.1]
     create_table :favorites do |t|
       t.integer :book_id
       t.integer :user_id
+      t.string :image
 
       t.timestamps
     end

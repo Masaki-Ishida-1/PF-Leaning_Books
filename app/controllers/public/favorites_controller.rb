@@ -1,5 +1,7 @@
 class Public::FavoritesController < ApplicationController
+
   def index
+    @books = current_user.favorite_books
   end
 
   def create

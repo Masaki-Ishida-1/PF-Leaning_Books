@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_one_attached :user_image
   has_many :books, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :favorite_books, through: :favorites, source: :book
 
   def get_user_image(width, height)
     unless user_image.attached?
@@ -15,4 +16,12 @@ class User < ApplicationRecord
     end
       user_image.variant(resize_to_fit:[width, height]).processed
   end
+
+  def self.guest
+    find_or_create_by!(name: 'guestuser' ,email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.name = "guestuser"
+    end
+  end
+
 end
