@@ -1,5 +1,7 @@
 class Public::UsersController < ApplicationController
   def show
+    @books = current_user.books
+    @user = User.find(params[:id])
   end
 
   def edit
@@ -7,11 +9,14 @@ class Public::UsersController < ApplicationController
   end
 
   def update
+    user = User.find(params[:id])
+    user.update(user_params)
+    redirect_to user_path(current_user.id)
   end
 
   def withdraw
-    customer = Customer.find(params[:id])
-    customer.update(is_deleted:true)
+    user = User.find(params[:id])
+    user.update(is_deleted:true)
     reset_session
     redirect_to root_path
   end

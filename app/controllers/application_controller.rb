@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
    if current_admin
       admins_users_path
    elsif current_user
-        root_path
+        books_path
    end
   end
 

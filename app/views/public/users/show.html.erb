@@ -1,2 +1,38 @@
-<h1>Public::Users#show</h1>
-<p>Find me in app/views/public/users/show.html.erb</p>
+<h1 class="text-center m-5 border-bottom p-1">マイページ</h1>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-6">
+      <h2 class ="text-center m-5 border-bottom p-1">投稿一覧</h2>
+      <div class="row">
+        <% @books.each do|book| %>
+          <div class="col-3">
+            <%= link_to book_path(book) do %>
+              <p><%= image_tag book.get_book_image(100,100) %></p>
+            <% end %>
+          </div>
+          <div class="col-9 text-left">
+            <%= link_to book_path(book) do %>
+              <p><%= book.name %></p>
+            <% end %>
+              <p><%= book.introduction %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-6">
+      <h2 class ="text-center m-5 border-bottom p-1">会員詳細</h2>
+      <div class="row">
+        <div class="col-3">
+          <p><%= image_tag @user.get_user_image(100,100) %></p>
+        </div>
+        <div class="col-9 text-left">
+          <p><%= @user.family_name %><%= @user.first_name %></p>
+          <p><%= @user.introduction %></p>
+        </div>
+      </div>
+        <div class="mt-5">
+          <%= link_to ' 編集する ', edit_user_path(current_user), class: "btn btn-primary" %>
+        </div>
+    </div>
+  </div>
+</div>
