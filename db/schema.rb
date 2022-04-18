@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2022_04_10_105702) do
   create_table "favorites", force: :cascade do |t|
     t.integer "book_id"
     t.integer "user_id"
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
