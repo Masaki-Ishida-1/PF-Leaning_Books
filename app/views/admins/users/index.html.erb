@@ -20,7 +20,7 @@
           <tr>
             <td><%= user.id %></td>
             <td>
-              <%= link_to admins_users_path(customer.id) do %>
+              <%= link_to admins_user_path(user.id) do %>
                 <%= user.family_name %><%= user.first_name %>
               <% end %>
             </td>

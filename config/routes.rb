@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   namespace :admins do
     resources :books,only:[:index,:destroy]
-    resources :users,only:[:index,:show,:edit]
+    resources :users,only:[:index,:show,:edit,:update]
   end
 
   devise_scope :user do

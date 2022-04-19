@@ -38,6 +38,12 @@ class Public::BooksController < ApplicationController
   end
 
   def destroy
+    @book = Book.find(params[:id])
+    if @book.destroy(book_params)
+      redirect_to book_path(@book)
+    else
+      render "edit"
+    end
   end
 
   def search
