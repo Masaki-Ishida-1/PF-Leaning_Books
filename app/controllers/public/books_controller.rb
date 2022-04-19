@@ -7,7 +7,7 @@ class Public::BooksController < ApplicationController
 
   def index
     @books = Book.all
-    @ranks = Book.find(Favorite.group(:book_id).order('count(book_id) DESC').limit(4).pluck(:book_id))
+    @ranks = Book.includes(:favorited_users).limit(5).sort {|a,b| b.favorited_users.size <=> a.favorited_users.size}
   end
 
   def show
@@ -49,7 +49,6 @@ class Public::BooksController < ApplicationController
   def search
     @results = @q.result.includes(:user)
   end
-
 
   private
 

@@ -2,6 +2,7 @@ class Book < ApplicationRecord
   has_one_attached :book_image
   belongs_to :user
   has_many :favorites, dependent: :destroy
+  has_many :favorited_users, through: :favorites, source: :user
 
   def get_book_image(width, height)
     unless book_image.attached?
