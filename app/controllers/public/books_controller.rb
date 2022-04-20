@@ -39,8 +39,8 @@ class Public::BooksController < ApplicationController
 
   def destroy
     @book = Book.find(params[:id])
-    if @book.destroy(book_params)
-      redirect_to book_path(@book)
+    if @book.destroy
+      redirect_to books_path
     else
       render "edit"
     end
@@ -53,7 +53,7 @@ class Public::BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:name,:image,:introduction)
+    params.require(:book).permit(:name,:image,:introduction,:favorite_id,:user_id,:star)
   end
 
   def set_q

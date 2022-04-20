@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :books, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :favorite_books, through: :favorites, source: :book
+  has_many :evaluation_id, dependent: :destroy
 
   def get_user_image(width, height)
     unless user_image.attached?

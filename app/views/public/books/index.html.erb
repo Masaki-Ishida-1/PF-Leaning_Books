@@ -25,8 +25,20 @@
           <p><%= book.name %></p>
           <p><%= image_tag book.get_book_image(100,100) %></p>
         <% end %>
-        <p>投稿者:<%= book.user.name %></p>
+        <p>投稿者:<%= book.user.family_name %></p>
         <div><%= render "public/favorites/favorite", book: book %></div>
+          <div id="star-rate<%= book.id %>">
+        <script>
+          $('#star-rate<%= book.id %>').empty();
+          $('#star-rate<%= book.id%>').raty({
+             size      : 36,
+             starOff   : '<%= asset_path('star-off.png') %>',
+             starOn    : '<%= asset_path('star-on.png') %>',
+             half      : false,
+             readOnly: true,
+             score: <%= book.star %>,
+           });
+         </script>
       </div>
     <% end %>
   </div>

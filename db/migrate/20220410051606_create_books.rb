@@ -6,6 +6,7 @@ class CreateBooks < ActiveRecord::Migration[6.1]
       t.text :introduction
       t.integer :favorite_id
       t.integer :user_id
+      t.string :star
 
       t.timestamps
     end
