@@ -1,0 +1,37 @@
+<h1 class="text-center m-5 border-bottom p-1">書籍詳細</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-5 text-center">
+      <p><%= image_tag @book.get_book_image(400,400) %></p>
+      <p>投稿者:<%= @book.user.name %></p>
+    </div>
+    <div class="col-7 text-center">
+      <div class="row">
+        <div class="col-6">
+          <p>タイトル</p>
+        </div>
+        <div class="col-6 text-left">
+          <p><%= @book.name %></p>
+        </div>
+        <div class="col-6">
+          <p>紹介</p>
+        </div>
+        <div class="col-6 text-left">
+          <p><%= @book.introduction %></p>
+        </div>
+        <div class="col-6 text-center">
+          <p>お気に入り</p>
+        </div>
+        <div class="col-6 text-left">
+          <p><%= render "public/favorites/favorite", book: @book %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-5 text-right">
+      <%= link_to '書籍一覧', books_path, class: "btn btn-success" %>
+    </div>
+    <div class="col-5 text-center">
+      <%= link_to '編集する', edit_book_path(@book), class: "btn btn-success" %>
+    </div>
+  </div>
+</div>

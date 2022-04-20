@@ -1,0 +1,14 @@
+<h1 class="text-center m-5 border-bottom p-1">検索結果</h1>
+<div class="container">
+  <div class="row">
+    <% @results.each do |book| %>
+      <div class="col-3">
+        <%= link_to book_path(book) do %>
+          <p><%= book.name %></p>
+          <p><%= image_tag book.get_book_image(100,100) %></p>
+        <% end %>
+        <p>投稿者:<%= book.user.name %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
