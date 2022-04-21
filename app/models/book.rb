@@ -7,7 +7,6 @@ class Book < ApplicationRecord
 
   validates :name, presence: true
   validates :introduction, presence: true
-  validates :image, presence: true
 
   def get_book_image(width, height)
     unless book_image.attached?
