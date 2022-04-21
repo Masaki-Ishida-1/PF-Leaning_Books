@@ -6,6 +6,7 @@
       </div>
       <div class="col-6">
         <%= f.file_field :book_image, accept: "image/*" %>
+        <p class="mt-2"><%= f.check_box :remove_book_image %>画像を削除する</p>
       </div>
     </div>
     <div class="row mt-5">

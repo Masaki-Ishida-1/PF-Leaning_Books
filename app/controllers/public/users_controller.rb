@@ -1,5 +1,6 @@
 class Public::UsersController < ApplicationController
   before_action :authenticate_user!, except: [:top, :about]
+  before_action :check_guest, only: :edit
 
   def show
     @books = current_user.books
@@ -21,6 +22,14 @@ class Public::UsersController < ApplicationController
     user.update(is_deleted:true)
     reset_session
     redirect_to root_path
+  end
+
+  def check_guest
+    @user = User.find(params[:id])
+    if @user.email == 'guest@example.com'
+      redirect_to root_path
+      flash[:alert] = 'ゲストは編集できません'
+    end
   end
 
   private
