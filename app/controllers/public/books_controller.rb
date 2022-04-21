@@ -1,5 +1,7 @@
 class Public::BooksController < ApplicationController
   before_action :set_q, only: [:index, :search]
+  before_action :authenticate_user!
+  before_action :check_guest, only: :destroy
 
   def new
     @book = Book.new
@@ -16,6 +18,11 @@ class Public::BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
+    if @book.user == current_user
+      render "edit"
+    else
+      redirect_to books_path
+    end
   end
 
   def update
@@ -50,6 +57,14 @@ class Public::BooksController < ApplicationController
     @results = @q.result.includes(:user)
   end
 
+  def check_guest
+    @book = Book.find(params[:id])
+    if @book.user.email == 'guest@example.com'
+      redirect_to root_path
+      flash[:alert] = 'ゲストは削除できません'
+    end
+  end
+
   private
 
   def book_params
@@ -59,4 +74,5 @@ class Public::BooksController < ApplicationController
   def set_q
     @q = Book.ransack(params[:q])
   end
+
 end
