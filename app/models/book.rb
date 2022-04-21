@@ -5,6 +5,10 @@ class Book < ApplicationRecord
   has_many :favorited_users, through: :favorites, source: :user
   has_many :evaluation_id, dependent: :destroy
 
+  validates :name, presence: true
+  validates :introduction, presence: true
+  validates :image, presence: true
+
   def get_book_image(width, height)
     unless book_image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpeg')

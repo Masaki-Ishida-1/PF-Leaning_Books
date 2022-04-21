@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2022_04_20_151547) do
     t.string "name"
     t.string "image"
     t.text "introduction"
+    t.string "star"
     t.integer "favorite_id"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false

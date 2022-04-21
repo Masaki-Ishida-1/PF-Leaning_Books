@@ -26,8 +26,10 @@
           <p><%= image_tag book.get_book_image(100,100) %></p>
         <% end %>
         <p>投稿者:<%= book.user.family_name %></p>
-        <div><%= render "public/favorites/favorite", book: book %></div>
-          <div id="star-rate<%= book.id %>">
+        <div id="favorite_buttons_<%= book.id %>">
+          <%= render "public/favorites/favorite", book: book %>
+        </div>
+        <div id="star-rate<%= book.id %>">
         <script>
           $('#star-rate<%= book.id %>').empty();
           $('#star-rate<%= book.id%>').raty({
@@ -39,7 +41,7 @@
              score: <%= book.star %>,
            });
          </script>
+        </div>
       </div>
     <% end %>
   </div>
-</div>
