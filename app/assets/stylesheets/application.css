@@ -13,15 +13,30 @@
  *= require_tree .
  *= require_self
  */
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
 .sidebar{
     max-width: 250px;
     min-width: 250px;
 }
+
 .sidebar .brand{
     background-color: #0d6efdc9;
     color: white;
 }
+
 .sidebar .nav-link{
     background-color: rgba(255, 255, 255, 0.493);
     color: white;
+}
+
+@media screen and (max-width: 1400px) {
+  .sidebar{
+    max-width: 100px;
+    min-width: 100px;
+  }
 }
