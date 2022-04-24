@@ -1,3 +1,68 @@
 // Place all the styles related to the public::homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.homes{
+.title_top {
+  font-size: 100px;
+  font-family: 'Bitter', serif;
+  color:#fff;
+}
+
+h1 {
+  background-color:#000;
+}
+
+.icon {
+  font-size: 80px;
+  color:#fff;
+}
+
+.home_p {
+  color:#fff;
+  background-color:#000;
+}
+
+.btn.btn-info:hover {
+  background-color:#fff;
+  color:#17a2b8;
+}
+
+.btn.btn-success:hover {
+  background-color:#fff;
+  color:#28a745;
+}
+
+.btn.btn-secondary:hover {
+  background-color:#fff;
+  color:#6c757d;
+}
+
+.index {
+  background-image: image-url('Books_top.jpg');
+  background-react: no-repeat;
+  background-position: center center;
+  background-attachment:fixed;
+  background-size:cover;
+}
+
+.container_about {
+  background-color:#fff;
+}
+
+@media screen and (max-width: 1700px) {
+  .containar{
+    margin-right:10%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+    strong {
+      font-size: 40px;
+    }
+
+    .icon {
+    font-size: 32px;
+  }
+}
+}

@@ -22,11 +22,14 @@
 .sidebar{
     max-width: 250px;
     min-width: 250px;
+    background-color:#333333;
 }
 
 .sidebar .brand{
-    background-color: #0d6efdc9;
-    color: white;
+  background-color: #FFFF99;
+  color: #99FFFF;
+  text-align:center;
+  margin: auto;
 }
 
 .sidebar .nav-link{
@@ -34,7 +37,23 @@
     color: white;
 }
 
-@media screen and (max-width: 1400px) {
+.header {
+  background-image: image-url('Books_header.jpg');
+  background-react: no-repeat;
+  background-position: center center;
+  background-attachment:fixed;
+  background-size:cover;
+}
+
+.nav.navbar-toggler {
+  color: #fff;
+}
+
+.nav.navbar-brand {
+  font-size: 35px;
+}
+
+@media screen and (max-width: 1210px) {
   .sidebar{
     max-width: 100px;
     min-width: 100px;
