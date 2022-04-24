@@ -1,7 +1,7 @@
 class Public::BooksController < ApplicationController
   before_action :set_q, only: [:index, :search]
   before_action :authenticate_user!
-  before_action :check_guest, only: :destroy
+  before_action :check_guest, only: [:destroy]
 
   def new
     @book = Book.new
@@ -61,7 +61,7 @@ class Public::BooksController < ApplicationController
     @book = Book.find(params[:id])
     if @book.user.email == 'guest@example.com'
       redirect_to root_path
-      flash[:alert] = 'ゲストは削除できません'
+      flash[:alert] = 'ゲストは操作できません'
     end
   end
 

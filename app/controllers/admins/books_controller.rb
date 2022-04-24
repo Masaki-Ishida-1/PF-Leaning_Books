@@ -5,8 +5,8 @@ class Admins::BooksController < ApplicationController
 
   def destroy
     book = Book.find(params[:id])
-    if book.destroy(book_params)
-      redirect_to book_path(@book)
+    if book.destroy
+      redirect_to admins_books_path
     else
       render "index"
     end
