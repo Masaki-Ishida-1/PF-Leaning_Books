@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <% @results.each do |book| %>
-      <div class="col-3">
+      <div class="col-xs-3 col-sm-4 col-md-3 img-thumbnail mt-2 mr-4">
         <%= link_to book_path(book) do %>
           <p><%= book.name %></p>
           <p><%= image_tag book.get_book_image(100,100) %></p>
