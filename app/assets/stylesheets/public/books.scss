@@ -2,8 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-@media screen and (max-width: 765px) {
-  .text_area{
-    margin-left :35%;
+.books{
+  @media screen and (max-width: 1400px) {
+    .container{
+      margin-left :5%;
+    }
   }
 }
