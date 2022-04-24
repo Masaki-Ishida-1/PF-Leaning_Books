@@ -1,6 +1,6 @@
 <div class="container">
   <div class ="row">
-    <h1 class=" col-xs-2 col-sm-5 col-md-5 text-center m-5 border-bottom p-1">人気一覧</h1>
+    <h1 class="col-xs-2 col-sm-5 col-md-5 text-center m-5 border-bottom p-1">人気一覧</h1>
     <div class="col-xs-6 col-sm-6 col-md-5 mt-5">
       <%= render "public/searches/search-btn" %>
     </div>
@@ -20,7 +20,7 @@
   </div>
   <div class="row">
     <% @books.each do|book| %>
-      <div class="col-xs-2 col-sm-2 col-md-2 img-thumbnail mt-2 mr-4">
+      <div class="col-xs-2 col-sm-4 col-md-2 img-thumbnail mt-2 mr-4">
         <%= link_to book_path(book) do %>
           <p class="text-center"><%= book.name %></p>
           <p class="mx-auto d-block"><%= image_tag book.get_book_image(100,100), class: "mx-auto d-block img-fluid" %></p>

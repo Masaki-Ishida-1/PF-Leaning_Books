@@ -68,7 +68,7 @@ class Public::BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:name,:book_image,:introduction,:favorite_id,:user_id,:star,:remove_book_image)
+    params.require(:book).permit(:name,:book_image,:introduction,:favorite_id,:user_id,:star)
   end
 
   def set_q
