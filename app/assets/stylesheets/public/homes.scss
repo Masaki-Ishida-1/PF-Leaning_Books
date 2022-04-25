@@ -11,6 +11,9 @@
 
 h1 {
   background-color:#000;
+  font-size: 100px;
+  font-family: 'Bitter', serif;
+  color:#fff;
 }
 
 .icon {
@@ -56,13 +59,27 @@ h1 {
   }
 }
 
-@media screen and (max-width: 900px) {
-    strong {
-      font-size: 40px;
+@media screen and (max-width: 1200px) {
+    h1 {
+      font-size: 80px;
     }
-
-    .icon {
-    font-size: 32px;
   }
-}
+
+  @media screen and (max-width: 900px) {
+      h1 {
+        font-size: 40px;
+      }
+      .icon {
+      font-size: 32px;
+    }
+  }
+
+   @media screen and (max-width: 569px) {
+      h1 {
+        font-size: 20px;
+      }
+      .icon {
+      font-size: 16px;
+    }
+  }
 }

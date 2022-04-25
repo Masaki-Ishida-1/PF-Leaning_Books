@@ -53,9 +53,50 @@
   font-size: 35px;
 }
 
-@media screen and (max-width: 1210px) {
+#collapseSide {
+  height: 100% !important;
+  display: block !important;
+  transform: translateX(-100%);
+  transition: 0.35s transform;
+  &.show {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .sidebar{
+    max-width: 200px;
+    min-width: 200px;
+  }
+}
+
+@media screen and (max-width: 1170px) {
   .sidebar{
     max-width: 100px;
     min-width: 100px;
+  }
+}
+
+@media screen and (max-width: 569px) {
+  .sidebar{
+    max-width: 80px;
+    min-width: 80px;
+  }
+
+  div.main-index {
+    max-width: 300px;
+    min-width: 300px;
+  }
+
+  @media screen and (min-width: 569px) {
+    .sidebar{
+      max-width: 40px;
+      min-width: 40px;
+    }
+
+    div.main-index {
+      max-width: 200px;
+      min-width: 200px;
+    }
   }
 }

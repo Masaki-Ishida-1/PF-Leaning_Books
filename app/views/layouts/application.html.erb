@@ -14,11 +14,9 @@
     <%= render 'layouts/header' %>
     <div class="index row h-100">
       <% if user_signed_in? %>
-      <div class ="col-2 h-100">
         <%= render 'layouts/sidebar' %>
-      </div>
       <% end %>
-      <div class="mx-auto col-10 h-100">
+      <div class="main-index mx-auto col-10 h-100">
         <%= yield %>
       </div>
     </div>
