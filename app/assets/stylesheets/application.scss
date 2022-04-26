@@ -20,21 +20,50 @@
  }
 
 .sidebar{
-    max-width: 250px;
-    min-width: 250px;
-    background-color:#333333;
+  max-width: 250px;
+  min-width: 250px;
+  background-color:#333333;
 }
 
 .sidebar .brand{
-  background-color: #FFFF99;
-  color: #99FFFF;
+  position: relative;
+  padding: 0.6em;
+  background: #e0edff;
+  line-height:0.95em;
+	font-weight:bold;
+	color: #FFF;
+	text-shadow: 0 0 0.2em rgba(0,0,0,1);
   text-align:center;
   margin: auto;
 }
 
-.sidebar .nav-link{
-    background-color: rgba(255, 255, 255, 0.493);
-    color: white;
+.sidebar .brand:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 30px;
+  border: 15px solid transparent;
+  border-top: 15px solid #e0edff;
+  width: 0;
+  height: 0;
+}
+
+.sidebar .nav-link {
+  background-color: rgba(255, 255, 255, 0.493);
+  color: #fff;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+
+.sidebar .nav-link:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
 }
 
 .header {
@@ -81,7 +110,7 @@
   }
 }
 
-@media screen and (max-width: 569px) {
+@media screen and (max-width: 570px) {
   .sidebar{
     max-width: 80px;
     min-width: 80px;
@@ -92,7 +121,7 @@
     min-width: 300px;
   }
 
-  @media screen and (min-width: 569px) {
+  @media screen and (min-width: 570px) {
     .sidebar{
       max-width: 40px;
       min-width: 40px;

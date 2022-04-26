@@ -1,4 +1,8 @@
 <%= search_form_for @q, url: search_books_path do |f| %>
+  <div class="search">
   <%= f.text_field :name_cont,class: "search-form",placeholder: "キーワード検索" %>
-  <%= f.submit "検索",class: "search-btn"%>
+  <button type="submit" class="search-btn">
+    <i class="fa fa-search"></i>
+  </button>
+  </div>
 <% end %>

@@ -81,6 +81,9 @@ class Public::BooksController < ApplicationController
 
   def set_q
     @q = Book.ransack(params[:q])
+    if @q == nil
+      render "index"
+    end
   end
 
 end

@@ -1,29 +1,29 @@
 <h1 class="text-center m-5 border-bottom p-1">検索結果</h1>
 <div class="container">
   <div class="row">
-    <% @results.each do |book| %>
-      <div class="col-xs-3 col-sm-4 col-md-3 img-thumbnail mt-2 mr-4">
+      <% @results.each do |book| %>
+      <div class="col-xs-3 col-sm-3 col-md-3 mt-2 mr-2">
         <%= link_to book_path(book) do %>
-          <p><%= book.name %></p>
+          <p class="col-10"><%= book.name %></p>
           <p><%= image_tag book.get_book_image(100,100) %></p>
         <% end %>
         <div id="favorite_buttons_<%= book.id %>">
           <%= render "public/favorites/favorite", book: book %>
         </div>
         <div id="star-rate<%= book.id %>">
-        <script>
-          $('#star-rate<%= book.id %>').empty();
-          $('#star-rate<%= book.id%>').raty({
-             size      : 36,
-             starOff   : '<%= asset_path('star-off.png') %>',
-             starOn    : '<%= asset_path('star-on.png') %>',
-             half      : false,
-             readOnly: true,
-             score: <%= book.star %>,
-           });
-         </script>
-        <p class="mt-2">投稿者:<%= book.user.name %></p>
+          <script>
+            $('#star-rate<%= book.id %>').empty();
+            $('#star-rate<%= book.id%>').raty({
+               size      : 36,
+               starOff   : '<%= asset_path('star-off.png') %>',
+               starOn    : '<%= asset_path('star-on.png') %>',
+               half      : false,
+               readOnly: true,
+               score: <%= book.star %>,
+             });
+           </script>
+          <p class="mt-2">投稿者:<%= book.user.family_name %></p>
+        </div>
       </div>
     <% end %>
-  </div>
 </div>

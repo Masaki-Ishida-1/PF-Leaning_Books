@@ -7,20 +7,18 @@
   </div>
   <div class="row mt-3">
     <% @ranks.each do |rank| %>
-      <div class ="col-xs-2 col-sm-2 col-md-2 mr-3 img-thumbnail">
-        <p class="text-center"><%= rank.name %></p>
+      <div class ="col-xs-4 col-sm-3 col-md-2 mr-2 mt-2  text-center img-thumbnail">
+        <p><%= rank.name %></p>
         <p><%= image_tag rank.get_book_image(100,100), class: "mx-auto d-block img-fluid" %></p>
       </div>
     <% end %>
   </div>
   <div class="row">
-    <div class="text-center">
-      <h2 class ="text-center m-5 border-bottom p-1">書籍一覧</h2>
-    </div>
+    <h1 class ="col-xs-2 col-sm-5 col-md-5 border-bottom text-center m-5 p-1">書籍一覧</h1>
   </div>
   <div class="row">
     <% @books.each do|book| %>
-      <div class="col-xs-2 col-sm-4 col-md-2 img-thumbnail mt-2 mr-4">
+      <div class="col-xs-2 col-sm-3 col-md-3 img-thumbnail mt-2 mr-2">
         <%= link_to book_path(book) do %>
           <p class="text-center"><%= book.name %></p>
           <p class="mx-auto d-block"><%= image_tag book.get_book_image(100,100), class: "mx-auto d-block img-fluid" %></p>
