@@ -6,7 +6,7 @@ class Book < ApplicationRecord
   # has_many :evaluation_id, dependent: :destroy
 
   validates :name, presence: true
-  validates :introduction, presence: true, length: { maximum: 50 }
+  validates :introduction, presence: true, length: { maximum: 200 }
   validates :star ,presence: true
 
   def get_book_image(width, height)
