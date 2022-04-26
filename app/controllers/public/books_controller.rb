@@ -8,7 +8,7 @@ class Public::BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all
+    @books = Book.all.page(params[:page]).per(10)
     @ranks = Book.includes(:favorited_users).limit(5).sort {|a,b| b.favorited_users.size <=> a.favorited_users.size}
   end
 
