@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     get 'about'=>"homes#about"
     get 'favorites'=> "favorites#index"
     patch 'users/withdraw/:id', to:'users#withdraw', as:"users/withdraw"
-    resources :users,only:[:show,:edit,:update]
+    resources :users,only:[:show,:edit,:update,:withdraw]
     resources :books,only:[:new,:index,:show,:edit,:update,:create,:destroy] do
       resource :favorites,only:[:create,:destroy]
       collection do

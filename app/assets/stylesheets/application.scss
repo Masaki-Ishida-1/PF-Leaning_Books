@@ -1,0 +1,106 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+.sidebar{
+    max-width: 250px;
+    min-width: 250px;
+    background-color:#333333;
+}
+
+.sidebar .brand{
+  background-color: #FFFF99;
+  color: #99FFFF;
+  text-align:center;
+  margin: auto;
+}
+
+.sidebar .nav-link{
+    background-color: rgba(255, 255, 255, 0.493);
+    color: white;
+}
+
+.header {
+  background-image: image-url('Books_header.jpg');
+  background-react: no-repeat;
+  background-position: center center;
+  background-attachment:fixed;
+  background-size:cover;
+}
+
+.nav.navbar-toggler {
+  color: #fff;
+}
+
+.nav.navbar-brand {
+  font-size: 35px;
+}
+
+#collapseSide {
+  height: 100% !important;
+  display: block !important;
+  transform: translateX(-100%);
+  transition: 0.35s transform;
+  &.show {
+    transform: translateX(0);
+  }
+}
+
+.index {
+  height: 100% !important;
+}
+
+@media screen and (max-width: 1700px) {
+  .sidebar{
+    max-width: 200px;
+    min-width: 200px;
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  .sidebar{
+    max-width: 100px;
+    min-width: 100px;
+  }
+}
+
+@media screen and (max-width: 569px) {
+  .sidebar{
+    max-width: 80px;
+    min-width: 80px;
+  }
+
+  div.main-index {
+    max-width: 300px;
+    min-width: 300px;
+  }
+
+  @media screen and (min-width: 569px) {
+    .sidebar{
+      max-width: 40px;
+      min-width: 40px;
+    }
+
+    div.main-index {
+      max-width: 200px;
+      min-width: 200px;
+    }
+  }
+}

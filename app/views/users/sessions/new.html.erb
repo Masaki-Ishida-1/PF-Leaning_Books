@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container container_session mt-5">
   <div class="row">
     <h3 class="p-3"><span class="header">ログイン</span></h3>
   </div>
@@ -6,35 +6,35 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <form>
       <div class="form-group row">
-        <%= f.label :メールアドレス, class:"col-2 offset-3 col-form-label" %>
+        <%= f.label :メールアドレス, class: "col-sm-12 col-md-3 col-form-label col-form-label" %>
         <div class="col-md-5">
-         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"sample@example.com", class:"form-control" %>
+         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com", class: "form-control" %>
         </div>
       </div>
 
       <div class="form-group row">
-        <%= f.label :パスワード, class:"col-2 offset-3 col-form-label" %>
+        <%= f.label :パスワード, class: "col-sm-12 col-md-3 col-form-label col-form-label" %>
         <div class="col-md-5">
-          <%= f.password_field :password, autocomplete: "current-password", class:"form-control" %>
+          <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
         </div>
       </div>
 
       <div class="form-group row">
-        <div class="col-2 mt-4 offset-5">
-          <%= f.submit "ログイン", class:"btn btn-primary btn-block btn-sm" %>
+        <div class="col-sm-4 col-md-4 offset-4 center-block text-center mt-4">
+          <%= f.submit "ログイン", class: "btn btn-primary btn-block btn-sm" %>
         </div>
       </div>
     </form>
   <% end %>
 
   <div class="row mt-5">
-    <div class="col-3 offset-2">
-      <h6><span class="header">会員登録がお済みでない方</span></h6>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <h6 class ="text-center">会員登録がお済みでない方</h6>
     </div>
   </div>
 
   <div class="row mt-3">
-    <div class="col-5 offset-3">
+    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
      <%= link_to "こちら", new_user_registration_path %> から新規登録を行ってください。
     </div>
   </div>

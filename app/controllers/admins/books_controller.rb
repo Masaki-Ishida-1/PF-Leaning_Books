@@ -4,9 +4,9 @@ class Admins::BooksController < ApplicationController
   end
 
   def destroy
-    @book = Book.find(params[:id])
-    if @book.destroy(book_params)
-      redirect_to book_path(@book)
+    book = Book.find(params[:id])
+    if book.destroy
+      redirect_to admins_books_path
     else
       render "index"
     end
@@ -15,6 +15,6 @@ class Admins::BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:name,:image,:introduction)
+    params.require(:book).permit(:name,:book_image,:introduction,:favorite_id,:user_id,:star)
   end
 end

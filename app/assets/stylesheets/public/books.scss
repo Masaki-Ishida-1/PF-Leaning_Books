@@ -1,3 +1,11 @@
 // Place all the styles related to the public::books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.books{
+  @media screen and (max-width: 1400px) {
+    .container{
+      margin-left :5%;
+    }
+  }
+}

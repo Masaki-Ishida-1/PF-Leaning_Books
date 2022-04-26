@@ -1,3 +1,30 @@
 // Place all the styles related to the public::users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.sessions {
+  .index {
+    background-image: image-url('Books_top.jpg');
+    background-react: no-repeat;
+    background-position: center center;
+    background-attachment:fixed;
+    background-size:cover;
+  }
+
+  .container_session {
+    background-color:#fff;
+  }
+}
+
+.registrations {
+  .index {
+    background-image: image-url('Books_top.jpg');
+    background-react: no-repeat;
+    background-position: center center;
+    background-attachment:fixed;
+    background-size:cover;
+  }
+
+  .container_session {
+    background-color:#fff;
+  }
+}

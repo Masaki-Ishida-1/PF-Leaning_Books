@@ -1,19 +1,22 @@
-<div class="container">
-  <div class="row">
-    <div class='mx-auto text-center mt-5'>
-      <h1>welcome to <i class="fas fa-book"></i><strong>LearningBooks</strong>  !!</h1>
-      <p>学習教材を共有しよう！！！</p>
-      <div class="btn-wrapper col-10 mx-auto">
-        <div class="row mt-5">
-          <%= link_to 'Log in',new_user_session_path, class: "btn btn-info btn-sm btn-block mb-3 sign_in" %>
-        </div>
-        <div class="row">
-          <%= link_to 'Sign Up',new_user_registration_path, class: "btn btn-success btn-sm btn-block mb-3 sign_up" %>
-        </div>
-        <div class="row">
-          <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: "btn btn-secondary btn-sm btn-block sign_in", method: :post %>
-        </div>
+<div class="containar">
+<div class="row">
+  <div class=' col-xs-10 col-sm-10 col-md-10 mx-auto text-center mt-5'>
+    <h1 class-"title"><i class="icon fas fa-book"></i>LearningBooks</h1>
+    <p class="home_p">学習教材を共有しよう！！！</p>
+    <div class="btn-wrapper col-10 mx-auto">
+      <div class="row mt-5">
+        <%= link_to 'ログイン',new_user_session_path, class: "btn btn-info btn-sm btn-block mb-3 sign_in" %>
+      </div>
+      <div class="row">
+        <%= link_to '新規登録',new_user_registration_path, class: "btn btn-success btn-sm btn-block mb-3 sign_up" %>
+      </div>
+      <div class="row">
+        <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: "btn btn-secondary btn-sm btn-block sign_in", method: :post %>
+      </div>
+      <div class="row mt-5">
+        <p class="text-white"><%= alert %></p>
       </div>
     </div>
   </div>
+</div>
 </div>

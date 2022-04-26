@@ -1,5 +1,5 @@
 <h1 class="text-center m-5 border-bottom p-1">書籍編集</h1>
-<%= form_with model: @book,url:book_path,local: true do |f| %>
+<%= form_with model: @book,local: true do |f| %>
   <div class="container">
     <div class="row">
       <div class="col-6">
@@ -9,13 +9,13 @@
       </div>
     </div>
     <div class="row mt-5">
-      <div class="col-4">
-        <%= f.text_field :name, autocomplete: "name", class:"form-control",placeholder: 'タイトル' %>
+      <div class="col-xs-4 col-sm-4 col-md-4">
+        <%= f.text_field :name, autocomplete: "name", class: "form-control",placeholder: 'タイトル' %>
       </div>
     </div>
     <div class="row mt-5">
-      <div class="col-9">
-        <%= f.text_area :introduction,:size => "30x5", class: "form-control",placeholder: '紹介文' %>
+      <div class="col-xs-9 col-sm-12 col-md-9">
+        <%= f.text_area :introduction,:size => "30x5", class: "form-control",placeholder: '紹介文 最大200文字' %>
       </div>
     </div>
     <div class="row mt-5">
@@ -27,7 +27,7 @@
         <%= f.submit ' 完了 ', class: "btn btn-success" %>
       </div>
       <div class="col-4 text-center">
-        <%= f.submit ' 削除 ',method: :delete, class: "btn btn-danger" %>
+        <%= link_to "削除する", book_path, method: :delete, class: "btn btn-sm btn-danger" %>
       </div>
     </div>
   </div>

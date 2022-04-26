@@ -1,12 +1,15 @@
 class Public::BooksController < ApplicationController
   before_action :set_q, only: [:index, :search]
+  before_action :authenticate_user!
+  before_action :check_guest, only: [:destroy]
+  before_action :guest,only:[:create,:update]
 
   def new
     @book = Book.new
   end
 
   def index
-    @books = Book.all
+    @books = Book.all.page(params[:page]).per(10)
     @ranks = Book.includes(:favorited_users).limit(5).sort {|a,b| b.favorited_users.size <=> a.favorited_users.size}
   end
 
@@ -16,6 +19,11 @@ class Public::BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
+    if @book.user == current_user
+      render "edit"
+    else
+      redirect_to books_path
+    end
   end
 
   def update
@@ -39,8 +47,8 @@ class Public::BooksController < ApplicationController
 
   def destroy
     @book = Book.find(params[:id])
-    if @book.destroy(book_params)
-      redirect_to book_path(@book)
+    if @book.destroy
+      redirect_to books_path
     else
       render "edit"
     end
@@ -50,13 +58,29 @@ class Public::BooksController < ApplicationController
     @results = @q.result.includes(:user)
   end
 
+  def check_guest
+    @book = Book.find(params[:id])
+    if @book.user.email == 'guest@example.com'
+      redirect_to root_path
+      flash[:alert] = 'ゲストは操作できません'
+    end
+  end
+
+  def guest
+    if current_user.name == "guestuser"
+      redirect_to root_path
+      flash[:alert] = 'ゲストは操作できません'
+    end
+  end
+
   private
 
   def book_params
-    params.require(:book).permit(:name,:image,:introduction)
+    params.require(:book).permit(:name,:book_image,:introduction,:favorite_id,:user_id,:star)
   end
 
   def set_q
     @q = Book.ransack(params[:q])
   end
+
 end
