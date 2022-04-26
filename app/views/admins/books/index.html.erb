@@ -23,9 +23,7 @@
                 <%= image_tag book.get_book_image(100,100) %>
               </td>
               <td>
-                <%= link_to admins_book_path(book.id) do %>
-                  <%= book.name %>
-                <% end %>
+                <%= book.name %>
               </td>
               <td>
                 <%= book.introduction %>
