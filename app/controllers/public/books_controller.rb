@@ -2,6 +2,7 @@ class Public::BooksController < ApplicationController
   before_action :set_q, only: [:index, :search]
   before_action :authenticate_user!
   before_action :check_guest, only: [:destroy]
+  before_action :guest,only:[:create,:update]
 
   def new
     @book = Book.new
@@ -60,6 +61,13 @@ class Public::BooksController < ApplicationController
   def check_guest
     @book = Book.find(params[:id])
     if @book.user.email == 'guest@example.com'
+      redirect_to root_path
+      flash[:alert] = 'ゲストは操作できません'
+    end
+  end
+
+  def guest
+    if current_user.name == "guestuser"
       redirect_to root_path
       flash[:alert] = 'ゲストは操作できません'
     end
