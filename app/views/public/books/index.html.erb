@@ -25,7 +25,11 @@
           <p class="text-center"><%= book.name %></p>
           <p class="mx-auto d-block"><%= image_tag book.get_book_image(100,100), class: "mx-auto d-block img-fluid" %></p>
         <% end %>
-        <p>投稿者:<%= book.user.family_name %></p>
+          <p>投稿者:
+          <%= link_to user_path(book.user.id) do %>
+            <%= book.user.family_name %>
+          <% end %>
+          </p>
         <div id="favorite_buttons_<%= book.id %>">
           <%= render "public/favorites/favorite", book: book %>
         </div>

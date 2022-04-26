@@ -3,12 +3,17 @@ class Public::UsersController < ApplicationController
   before_action :check_guest, only: :edit
 
   def show
-    @books = current_user.books
     @user = User.find(params[:id])
+    @books = @user.books
   end
 
   def edit
     @user = User.find(params[:id])
+    if @user == current_user
+      render "edit"
+    else
+      redirect_to books_path
+    end
   end
 
   def update
