@@ -63,6 +63,10 @@
   }
 }
 
+.index {
+  height: 100% !important;
+}
+
 @media screen and (max-width: 1700px) {
   .sidebar{
     max-width: 200px;
