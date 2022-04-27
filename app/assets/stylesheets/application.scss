@@ -13,15 +13,17 @@
  *= require_tree .
  *= require_self
  */
- *{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
- }
+}
 
 .sidebar{
   max-width: 250px;
   min-width: 250px;
+  height: 100vh !important;
+  min-height : 100vh !important;
   background-color:rgba(51,51,51,0.9);
 }
 
@@ -83,7 +85,8 @@
 }
 
 .collapseSide {
-  height: 100% !important;
+  height: 100vh !important;
+  min-height : 100vh !important;
   pointer-events: none;
   position: absolute;
   z-index: 1;
@@ -95,7 +98,8 @@
 }
 
 .collapseSide.active {
-  height: 100% !important;
+  height: 100vh !important;
+  min-height : 100vh !important;
   pointer-events: auto;
   position: absolute;
   z-index: 1;
@@ -108,11 +112,6 @@
 
 .btn {
 	cursor: pointer;
-}
-
-.index {
-  height: 100vh !important;
-  min-height : 100vh !important;
 }
 
 @media screen and (max-width: 550px) {
