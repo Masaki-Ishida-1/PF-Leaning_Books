@@ -43,6 +43,11 @@ h1 {
   color:#6c757d;
 }
 
+.main-index {
+  height: 100% !important;
+  min-height : 100% !important;
+}
+
 .index {
   background-image: image-url('Books_top.jpg');
   background-react: no-repeat;
@@ -53,11 +58,13 @@ h1 {
 
 .container_about {
   background-color:#fff;
+  position: relative;
+  top: 8%;
 }
 
 @media screen and (max-width: 1700px) {
   .containar{
-    margin-right:10%;
+    margin-right: 10%;
   }
 }
 

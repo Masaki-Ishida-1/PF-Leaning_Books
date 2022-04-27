@@ -43,6 +43,8 @@
   }
 
   .index {
+    height: 100vh !important;
+    min-height : 100vh !important;
     background-color: #FFFFAA;
   	background-image:
   	linear-gradient(-90deg, #fff 50%, transparent 50%);
@@ -59,5 +61,7 @@
     .image_input_btn{
       width: 40%;
     }
+
+
   }
 }

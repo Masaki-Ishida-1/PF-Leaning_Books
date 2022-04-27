@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="h-100">
+<html>
   <head>
     <title>LearningBooks</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,13 +10,13 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="main <%= controller.controller_name %> h-100">
+  <body class="main <%= controller.controller_name %>">
     <%= render 'layouts/header' %>
-    <div class="index row">
+    <div class="index">
       <% if user_signed_in? %>
         <%= render 'layouts/sidebar' %>
       <% end %>
-      <div class="main-index mx-auto col-10 h-100">
+      <div class="main-index">
         <%= yield %>
       </div>
     </div>
