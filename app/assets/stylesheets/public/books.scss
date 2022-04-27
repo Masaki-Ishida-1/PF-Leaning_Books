@@ -43,16 +43,11 @@
   }
 
   .index {
+    min-height : 100vh !important;
     background-color: #FFFFAA;
   	background-image:
   	linear-gradient(-90deg, #fff 50%, transparent 50%);
   	background-size: 14px 14px;
-  }
-
-  @media screen and (max-width: 1400px) {
-    .container{
-      margin-left : 5%;
-    }
   }
 
   @media screen and (max-width: 570px) {

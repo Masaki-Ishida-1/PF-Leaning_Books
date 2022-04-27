@@ -16,7 +16,9 @@
       <% if user_signed_in? %>
         <%= render 'layouts/sidebar' %>
       <% end %>
+      <div class="main-index">
         <%= yield %>
+      </div>
     </div>
   </body>
 </html>
