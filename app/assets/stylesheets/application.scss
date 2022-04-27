@@ -115,36 +115,16 @@
   min-height : 100vh !important;
 }
 
-@media screen and (max-width: 1700px) {
-  .sidebar{
-    max-width: 200px;
-    min-width: 200px;
-  }
-}
-
-@media screen and (max-width: 1170px) {
-  .sidebar{
-    max-width: 100px;
-    min-width: 100px;
-  }
-}
-
 @media screen and (max-width: 550px) {
   .sidebar{
-    max-width: 55%;
-    min-width: 55%;
-  }
-
-  div.main-index {
-    height: 100% !important;
-    max-width: 60%;
-    min-width: 60%;
+    max-width: 100%;
+    min-width: 100%;
   }
 }
 
 @media screen and (max-width: 480px) {
   .sidebar{
-    max-width: 55%;
-    min-width: 55%;
+    max-width: 100%;
+    min-width: 100%;
   }
 }
