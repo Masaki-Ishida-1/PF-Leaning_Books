@@ -114,6 +114,16 @@
 	cursor: pointer;
 }
 
+#back {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+.top{
+  width: 40px;
+  height: 40px;
+}
+
 @media screen and (max-width: 550px) {
   .sidebar{
     max-width: 100%;
