@@ -3,18 +3,6 @@
     <div class="container">
       <% if user_signed_in? %>
         <button type="button" class="btn-side p-3"><i class="fas fa-angle-double-down"></i></button>
-        <script>
-          window.addEventListener('load', (event) => {
-            const collapseSide = document.querySelector('.collapseSide');
-            document.addEventListener("click", (e) => {
-              if(e.target.closest(".btn-side")) {
-            		collapseSide.classList.contains("active") ? collapseSide.classList.remove("active") : collapseSide.classList.add("active");
-            	} else {
-            		collapseSide.classList.remove("active");
-            	}
-            });
-          });
-        </script>
       <% end %>
       <a class="nav navbar-brand p-3 text-info" href="/"><%= image_tag 'Logo.png', size: "180x250", class: "mx-auto d-block img-fluid" %></a>
 
