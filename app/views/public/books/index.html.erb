@@ -7,7 +7,7 @@
   </div>
   <div class="row mt-3">
     <% @ranks.each do |rank| %>
-      <div class ="col-xs-4 col-sm-3 col-md-2 mr-2 mt-2  text-center img-thumbnail">
+      <div class ="box fadeInUpTrigger col-xs-4 col-sm-3 col-md-2 mr-2 mt-2  text-center img-thumbnail">
         <p><%= rank.name %></p>
         <p><%= image_tag rank.get_book_image(100,100), class: "mx-auto d-block img-fluid" %></p>
       </div>
@@ -16,7 +16,7 @@
   <div class="row">
     <h1 class ="col-xs-2 col-sm-5 col-md-5 border-bottom text-center m-5 p-1">書籍一覧</h1>
   </div>
-  <div class="row">
+  <div class="box fadeInUpTrigger row">
     <% @books.each do|book| %>
       <div class="col-xs-2 col-sm-3 col-md-3 img-thumbnail mt-2 mr-2">
         <%= link_to book_path(book) do %>
