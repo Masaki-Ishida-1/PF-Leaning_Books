@@ -16,6 +16,7 @@ import '@fortawesome/fontawesome-free/js/all'
 import "./scroll"
 import "./slide"
 import "./fadein"
+import "./logoanime"
 
 Rails.start()
 // Turbolinks.start()
