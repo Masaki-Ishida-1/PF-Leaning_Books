@@ -60,6 +60,21 @@
     visibility: visible;
   }
 
+  .scale-box{
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .scale-img{
+    transition-duration: 0.3s;
+  }
+
+  .scale-img:hover{
+    transform: scale(1.2);
+    transition-duration: 0.3s;
+    opacity: 0.6;
+  }
+
   @media screen and (max-width: 570px) {
     .image_input_btn{
       width: 40%;
