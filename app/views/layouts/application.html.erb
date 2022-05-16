@@ -11,9 +11,11 @@
   </head>
 
   <body class="main <%= controller.controller_name %>">
-    <div id="splash">
-      <div id="splash_logo"><%= image_tag 'Logo.png', class: "fadeUp mx-auto d-block img-fluid" %></div>
-    </div>
+    <% if current_page?(root_path) %>
+      <div id="splash">
+        <div id="splash_logo"><%= image_tag 'top-logo.png', class: "fadeUp mx-auto d-block img-fluid" %></div>
+      </div>
+    <% end %>
     <%= render 'layouts/header' %>
     <div class="index">
       <% if user_signed_in? %>
