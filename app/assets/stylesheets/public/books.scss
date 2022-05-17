@@ -55,7 +55,6 @@
     visibility: hidden;
     transition: all 1s;
     transition-duration: 0.3s;
-    z-index: 1;
   }
   .load-fade.is-show {
     opacity: 1;
@@ -65,7 +64,7 @@
   .load-fade:hover {
     transform: scale(1.2);
     transition-duration: 0.3s;
-    z-index: 2;
+    z-index: 1;
   }
 
   .scale-box{
