@@ -68,6 +68,24 @@
   border-bottom: none;
 }
 
+.btn-side {
+  background-color: rgba(255, 255, 255, 0.493);
+  color: #fff;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-bottom: solid 7px #627295;
+  border-radius: 3px;
+  background: #550000;
+}
+
+.btn-side:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}
+
 .header {
   background-image: image-url('Books_header.jpg');
   background-react: no-repeat;
@@ -119,6 +137,7 @@
   right: 20px;
   bottom: 20px;
 }
+
 .top{
   width: 40px;
   height: 40px;
