@@ -17,6 +17,7 @@ import "./scroll"
 import "./slide"
 import "./fadein"
 import "./logoanime"
+import "./vanilla-tilt"
 
 Rails.start()
 // Turbolinks.start()

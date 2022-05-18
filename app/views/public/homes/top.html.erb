@@ -1,8 +1,19 @@
 <div class="containar">
   <div class="row">
     <div class='col-xs-10 col-sm-10 col-md-10 mx-auto text-center mt-5'>
-      <h1 class-"title"><i class="icon fas fa-book"></i>LearningBooks</h1>
-      <p class="home_p">学習教材を共有しよう！！！</p>
+      <div class="card">
+        <div class="card-content">
+          <h1 class="title"><i class="icon fas fa-book"></i>LearningBooks</h1>
+          <p class="home_p">学習教材を共有しよう！！！</p>
+        </div>
+      </div>
+      <script type="text/javascript">
+      	VanillaTilt.init(document.querySelector(".card"), {
+      		max: 25,
+      		speed: 400,
+      		glare: true,
+      	});
+      </script>
       <div class="btn-wrapper col-10 mx-auto">
         <div class="row mt-5">
           <%= link_to 'ログイン',new_user_session_path, class: "btn btn-info btn-sm btn-block mb-3 sign_in" %>
