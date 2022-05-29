@@ -8,8 +8,10 @@
   <div class="row mt-3">
     <% @ranks.each do |rank| %>
       <div class ="load-fade col-xs-4 col-sm-3 col-md-3 mr-2 mt-2  text-center img-thumbnail">
+        <%= link_to book_path(rank) do %>
           <p><%= rank.name %></p>
           <p class="scale-box"><%= image_tag rank.get_book_image(100,100), class: "scale-img mx-auto d-block img-fluid" %></p>
+        <% end %>
       </div>
     <% end %>
   </div>
