@@ -10,7 +10,7 @@ class Public::BooksController < ApplicationController
 
   def index
     @books = Book.all.page(params[:page]).per(10)
-    @ranks = Book.includes(:favorited_users).limit(5).sort {|a,b| b.favorited_users.size <=> a.favorited_users.size}
+    @ranks = Book.left_joins(:favorites).group(:id).order("count(favorites.book_id) desc").limit(5)
   end
 
   def show
