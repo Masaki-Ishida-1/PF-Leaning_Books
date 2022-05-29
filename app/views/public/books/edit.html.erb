@@ -25,6 +25,14 @@
       </div>
     </div>
     <div class="row mt-5">
+      <div class="col-xs-10 col-sm-10 col-md-10">
+        <%= f.label :star,'評価 ', class: 'col-3 col-form-label' %>
+      </div>
+    </div>
+    <div class="row" id="star">
+      <%= f.hidden_field :star, id: :review_star %>
+    </div>
+    <div class="row mt-5">
       <div class="col-4">
       </div>
     </div>
@@ -37,4 +45,14 @@
       </div>
     </div>
   </div>
+  <script>
+　　$('#star').empty();
+    $('#star').raty({
+      size     : 36,
+      starOff:  '<%= asset_path('star-off.png') %>',
+      starOn : '<%= asset_path('star-on.png') %>',
+   　 　　　scoreName: 'book[star]',
+      half: false,
+    });
+  </script>
 <% end %>
